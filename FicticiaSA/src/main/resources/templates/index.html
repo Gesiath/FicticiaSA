@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Ficticia te da la bienvenida</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+  <header id="header">
+    <div class="container d-flex align-items-center">
+
+      <a href="/" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>
+
+      
+	  <a sec:authorize="hasAnyRole('ROLE_CLIENT')" th:href="@{/client/profileCli/}+${session.usersession.id}" class="appointment-btn scrollto btn-register">Perfil</a>
+      <a sec:authorize="!isAuthenticated()" href="/login" class="appointment-btn scrollto">Iniciar sesion</a>
+      <a sec:authorize="isAuthenticated()" href="/logout" class="appointment-btn scrollto">Cerrar sesion</a>
+
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="inner-page">
+      <div class="container">
+        
+       
+   			 
+        
+            	<div class="row justify-content-end">          	          		
+              
+               	 <div class="col-4 rbackg ">
+
+                  	  <h1>¡La mejor opción para mantener a tu familia segura! </h1>
+						<br>
+						
+
+                	    <p class="info">En Ficticia estamos compremetidos a brindar a tu familia con la mejor cobertura
+                	    y la mejor atención posible
+                   	  	   en busca de un
+                     	   punto exacto de unión: ¡La salud!
+                   	 	</p>
+                    
+                </div>
+
+            </div>           
+        
+    
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">  
+
+    <div class="container">
+    
+     <div class="footer-top">          
+
+          <div class="col text-center">
+            <div class="footer-info">
+              <h3>Ficticia</h3>
+              <div class="row justify-content-md-center rsize">
+              <div class="address col-md-2"> <p>     
+              		Independencia 47-1 <br>
+                	Cordoba 5000, ARG</p></div>
+              <div class="contact col-md-2">
+              <p>                     	          
+                <strong>Telefono:</strong> +54 11 1234 5678<br>
+                <strong>Email:</strong> ficticiaSA@mail.com
+              </p>
+              </div>
+              </div>
+              <div class="social-links">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+     
+     </div> 
+   
+      <div class="copyright">
+        &copy; Copyright <strong><span>Ficticia</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
